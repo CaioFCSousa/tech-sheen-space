@@ -1,12 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import NavBar from "@/components/NavBar";
+import HeroSection from "@/components/HeroSection";
+import TechMarquee from "@/components/TechMarquee";
+import ProjectsSection from "@/components/ProjectsSection";
+import ContactSection from "@/components/ContactSection";
+import FooterSection from "@/components/FooterSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen relative" style={{ background: "hsl(var(--background))" }}>
+      {/* Subtle scanlines effect */}
+      <div
+        className="pointer-events-none fixed inset-0 z-50"
+        style={{
+          backgroundImage:
+            "repeating-linear-gradient(0deg, transparent, transparent 2px, hsl(152 100% 50% / 0.008) 2px, hsl(152 100% 50% / 0.008) 4px)",
+        }}
+      />
+
+      <NavBar />
+      <main>
+        <HeroSection />
+        <div id="stack">
+          <TechMarquee />
+        </div>
+        <ProjectsSection />
+        <ContactSection />
+      </main>
+      <FooterSection />
     </div>
   );
 };
